@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Stop</title>
+    <style>
+        #stopName {
+            font-size: 1.5em;
+            font-weight: 400;
+            padding: 0.25em;
+            background-color: aquamarine;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="stopInfo" style="width:20em">
+    <div>
+        <label for="stopId">Stop ID: </label>
+        <input id="stopId" type="text">
+        <input id="submit" type="button" value="Check" onclick="getInfo()"></div>
+    <div id="result">
+        <div id="stopName"></div>
+        <ul id="buses"></ul>
+    </div>
+</div>
+<script>
+    function getInfo() {
+
+        //get value from textbox
+        let id = $('#stopId').val();
+
+        if(id !== '1287' && id !== '1308' && id !== '1327' && id !== '2334')
+        {
+            $('#stopName').empty();
+            $('#buses').empty();
+
+            $('#stopName').text('Error');
+        }
+        else {
+            //izprashtame zaqvka do https://judgetests.firebaseio.com/businfo/{stopId}.json
+            $.ajax('https://judgetests.firebaseio.com/businfo/' + id + '.json',
+                {
+                    type: 'GET',
+                    success: function (response) {
+
+
+                        //get the name of the bus and put it in the div
+                        let stationName = response.name;
+                        let p = $('<p></p>');
+                        p.text(stationName);
+
+
+                        //chistim go purvo
+                        $('#stopName').empty();
+
+                        //zakachame imeto na spirkata za diva
+                        $('#stopName').append(p);
+
+
+                        //take the ul and append the li elements
+                        let ulToFill = $('#buses');
+                        ulToFill.empty();
+
+                        for (let bus in response.buses) {
+                            let li = $('<li>')
+                                .text('Bus ' + bus + ' arrives in ' + response.buses[bus] + ' minutes');
+
+                            ulToFill.append(li);
+                        }
+                    }
+                });
+
+        }
+
+    }
+</script>
+</body>
+</html>

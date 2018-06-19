@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Schedule</title>
+    <style>
+        #schedule { text-align: center; width: 400px; }
+        input { width: 120px; }
+        #info { background-color:aquamarine; border:1px solid black; margin:0.25em; }
+        .info { font-size: 1.5em; padding: 0.25em; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="schedule">
+    <div id="info"><span class="info">Not Connected</span></div>
+    <div id="controls">
+        <input id="depart" value="Depart" type="button" onclick="depart()" >
+        <input id="arrive" value="Arrive" type="button" onclick="arrive()" disabled="true">
+    </div>
+</div>
+<script>
+    /*
+        RESHIH ZADACHATA S DVA METODA depart() i arrive().
+    */
+
+
+    let currentId = 'depot';
+    let currentStop = "";
+    function depart() {
+
+        $.ajax('https://judgetests.firebaseio.com/schedule/' + currentId + '.json',
+            {
+                type:'GET',
+                success:function(response){
+
+
+                    //Write name of next stop
+                    $('.info').text('Next stop ' + response.name);
+
+                    //tazi promenliva durji imeto na spirkatam shte ni trqbva v drugiq metod
+                    currentStop = response.name;
+
+                    //disable depart button
+                    $('#depart').attr('disabled', 'true');
+
+                    //enable arrive button
+                    $('#arrive').removeAttr('disabled');
+
+                    //setvame Id-to da e = nda sledvashtoto
+                    currentId = response.next;
+                }
+            });
+
+    }
+
+    function arrive() {
+
+        //enable depart button
+        $('#depart').removeAttr('disabled');
+
+        //disable arrive button
+        $('#arrive').attr('disabled', 'true');
+
+        //Write arriving at bus stop
+        $('.info').text('Arriving at ' + currentStop);
+
+    }
+
+</script>
+</body>
+</html>

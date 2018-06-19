@@ -1,0 +1,20 @@
+
+Predi .success imame :
+	.beforesend - napisanoto vutre se izpulnqva predi .success
+	.completed - napisanoto vutre se izpulnqva sled .sussess
+
+Po dobre da polzvame $.ajax() vmesto $get() !
+
+Za zarejdaneto na bibilioteki e dobre da se polzva CDN, tova e link koito se importva s 
+<script src="">, namira i zarejda nai blizkiq server sprqmo tova kude se namirame, taka vsichko 
+vurvi po burzo zashtoto ako servera e daleche neshtata zarejdat po bavno.
+
+
+TypeScript e cql ezik koito kompilira JavaScript, kakto e SASS i LESS za CSS. MOJE DA PISHEM N NEGO 
+KATO POCHNEM RABOTA V NQKOQ FIRMA. Tam imame promenlivi, konstruktori, funkcii i dr.
+
+Shte uchim da pishem i na posledniq Angular2 i Angular4, tam ima TypeScript dokato v purviq Angular 
+se pishe na TypeScript. 
+Ima ogromna razlika mejdu Angular1 i (Angular2 i 4), v 1 vsichko e razdeleno na kontrolleri a v 2 i 4 
+vsichko e na moduli, vseki modul si ima HTML i JS i SASS fail.
+
