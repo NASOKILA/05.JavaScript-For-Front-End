@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+
+Javascript
+Shte govorim za basic sintax, masivi, cikli i dr.
+JS e stranen ezik , reaigira stranno na momenti, no ni olesnqva mnogo.
+Mojem direktno da pishem v brawsera nie shte polzvame Google Chrome !!!
+
+Programite ne se kompilirat napravo se izpulnqvat,
+V JS VSICHKO E OBEKT !!!
+
+za promenlivite polzvame 'let' i 'var' IMAT VAJNA RAZLIKA SHTE Q VIDIM NAPRAD.
+
+Nqma znachenie s kakvi kavichki slagame stringovete !!!
+
+IMA MNOGO STRANNI RABOTI V JS.  TRQBVA DA TESTVASH ZA DA VIDISH !
+
+11 + "1"
+"111"
+
+"11"-2
+9
+
+"11"-1
+10
+
+"11"+1
+"111"
+
+[] == false;       //Prazen masiv e false
+true
+
+I MNOGO DRUGI NEOBQSNIMI NESHta :D
+
+
+
+Imame tipove koito mogat da se sravnqvat !
+
+
+
+5 == "5"    // tova e samo za stoinost i ni kazva che e taka
+true
+
+5 === "5"      // === e i za tiv
+false
+
+
+RAZGLEDAHME if() else(), switch case, cikli, masivi i dr.
+Razlikite v JS i C# !!!
+Za napred shte svurzvame JS failove v nshiq HTML !
+
+
+FUNKCIITE SE PISHAMT MNOGO V JS !!!!!
+
+for(let i = 0; i<=10; i++)
+{
+    console.log(i)
+}
+
+
+Function Multiply(a,b)
+{
+    return(a * b);
+}
+
+
+
+
+VAJNOOOOOOOO !!!!!!!!!!!!!!!!!!!
+Imame:
+ 1.Block Scope  -  'let' vaji samo tam kudeto sme q definirali
+ 2.Function Scope    -    'var' vaji navssqkude i moje da e opasno !
+TOVA GO NQMA V C# !!!
+POLZVAITE POVECHE 'let' !!!!!!!!!!
+
+
+
+//Predi vreme nqmashe let a samo var, i se opredelqshe
+    ot stoinostta sled tova.
+
+
+
+ANONIMNI I CALLBACK FUNKCII:
+
+    Mojem da imame promenliva ravna na funkciq i kato q izvikame
+    da izpulnqva funkciqta.
+
+    let printFunction = function(x){console.log(x)}
+
+foreach(): TOVA E PAK CIKUL I MOJE DA GO APPLAIVAME KUM NESHTA
+    OBHOJDA ELEMEnti V KOLEKCII.
+    DAVA DOSTUP DO ELEMENTITE NA DADEN MASIV ILI DR, I MOJEM
+    DA GI MANIPULIRAME
+
+PRIMER:
+let printThing = function(x){console.log(x)};
+[10, 20, 30].forEach(printThing);
+// 10
+// 20
+// 30
+
+CALLBACK FUNKCIQ E FUNKCIQ KOQTO VEDNAGA SE IZVIKVA;
+(function(text){console.log(text)})("hello")
+    //Tq vednaga s izvikva
+
+ALERT FUNKCII:    Te sa dosadni i vadat alert suobshteniq.
+(function(text){alert(text)})("hello")   // Pokazva ni go kato ALERT !!!
+
+
+
+
+
+
+
+OBEKTI:
+    V JS VSICHKO E OBEKT !!!
+    let obj = {name: "Nasko", Age:24};
+
+    Mojem da gi obhojdame i da gi polzvame, da dobavqme i da mahame !
+
+    obj.Name        //"Nasko"
+    obj.Age         //24
+    obj["Site"] = "http://www.softuni.bg";
+
+    obj.Site        // "http://www.softuni.bg"
+
+Mojem da promenqme:
+    obj.Age = 30;
+    obj.Age         //30
+
+Mojem i da triem :
+    delete obj.Age
+    obj.Age     //undefined
+
+
+
+
+
+JSON Obekti:            JavaScript Object Notation
+    Tova e FORMAT, nachin po koito dannite sa vizualizirani
+    SHTE GO POLZVAME MNOGO ZA NAPRED !!!
+
+    Primer:
+    {"Name":"Atanas","Surename":"Kambitov","Age":"24",
+        "Country":"Bulgaria", "City":"Blagoevgrad"}
+
+    SHTE TRQBVA ZA NAPRED DA PARSVAME STRINGOVE KUM JSON OBEKTI
+    I OBRATNOTO.
+
+XML FORMAT:
+    Podobno na JSON obekt.
+    Durji informaciqta pod tagove kakto v HTML.
+    Primer:
+
+    <product>
+        <product_name>Banana</product_name>
+        <product_quantity>150</product_quantity>
+        <product_price>2.25$</product_price>
+    </product>
+
+PO PRIQTNO SE RABOTI S JSON FAILOVE !!!
+
+
+
+
+
+MASIVI:         Masiva v JS e OBEKT !!!
+    let numbers = [1,2,3,4,5];
+    Mojem da pravim kakvoto si oiskame, edin masiv moje
+    da ima vsqkakuv tip
+
+    VAJNOOOOO !!!!!
+    Mojem da go obhojdame s :
+    for(let i in Array)
+    {
+        //sus 'in' ni vadi vsichki INDEXI
+    }
+
+    for(let i of Array)
+    {
+        //sus 'of' ni vadi vsichki ELEMENTI
+        //Raboti kato foreach(){ ... }
+    }
+
+
+    Moje da polzvame i tradicionniq foreach(){ ... } ili
+    for(){ ... };
+    Mojem da dobavqme, triem, promenqme i podrejdame elementi,
+    bez znachenie ot tiput im !!!
+
+
+
+JOIN()  :
+    Znaem go absolutno sushtoto e !!!
+    Joinva na edin red:
+        let Arr = [1,2,3,4];
+        console.log(Arr.join("/"));         //    1/2/3/4
+
+
+PUSH()  :
+    Dobavq element nakraq na masiva !!!
+    let Arr = [1,2,3,4];
+    Arr.push(5)
+    console.log(Arr.join("/"));         //    1/2/3/4/5
+
+
+POP()   :
+    Maha posledniq element !!!!
+
+
+UNSHIFT()   :
+    Dobavq element otpred na purva poziciq !!!
+    let Arr = [1,2,3,4];
+    Arr.unshift(0)
+    console.log(Arr.join("/"));         //    0/1/2/3/4/5
+
+SHIFT()     :
+    Maha elementut ot purvata poziciq !!!
+
+
+
+
+Stringove   :
+    MOJEM DA POLZVAME ''  i  " "  BEZ DA IMAME PROBLEMI !!!
+
+Split    :
+    Znaem kakvo e, polzvali sme go !!!
+
+
+
+map()   :
+    Te sa kato lambda funkcii (SUKRATENI FUNKCII)
+        let names = ["Toshko    ","    Asi","  Nasko  "," Toni   "];
+        str.map(s => s.trim());
+        for(let name of names)
+        {
+           console.log(name);
+        }
+
+        output:
+            Toshko
+            Asi
+            Nasko
+            Toni
+
+
+
+
+-->
+
+
+
+</body>
+</html>
+
+
+
+
