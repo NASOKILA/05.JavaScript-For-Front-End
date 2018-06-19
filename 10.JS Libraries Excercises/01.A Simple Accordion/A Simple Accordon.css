@@ -1,0 +1,84 @@
+
+.container {
+    width: 1180px;
+    margin-top: 3em;
+}
+
+.container h1
+{
+    text-align: center;
+    color: #733838;
+    margin-bottom: 25px;
+}
+
+#accordion .panel {
+    border-radius: 0;
+    border: 0;
+    margin-top: 0;
+}
+
+#accordion a {
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 1px solid #733838;
+    background-color: #733838;
+    text-decoration: none;
+}
+
+#accordion .panel-heading a.collapsed:hover,
+#accordion .panel-heading a.collapsed:focus {
+    background-color: #733838;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+
+#accordion .panel-heading a.collapsed:hover::before,
+#accordion .panel-heading a.collapsed:focus::before {
+    color: white;
+}
+
+#accordion .panel-heading {
+    padding: 0;
+    border-radius: 0px;
+    text-align: center;
+    margin: 5px;
+    color: white;
+}
+
+#accordion .panel-heading a:not(.collapsed) {
+    color: white;
+    background-color: #733838;
+    transition: all 0.2s ease-in;
+}
+
+/* Add Indicator fontawesome icon to the left */
+#accordion .panel-heading .accordion-toggle::before {
+    font-family: 'FontAwesome';
+    content: '\f00d';
+    float: left;
+    color: white;
+    font-weight: lighter;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in;
+}
+
+#accordion .panel-heading .accordion-toggle.collapsed::before {
+    color: white;
+    transform: rotate(-135deg);
+    transition: all 0.2s ease-in;
+}
+
+.list-options
+{
+    list-style: none;
+}
+
+.list-options .option
+{
+    color: #733838;
+    text-align: center;
+}
+
+
+
+
