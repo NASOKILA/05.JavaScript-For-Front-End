@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="search.js"></script>
+    <title>Search in List</title>
+</head>
+<body>
+    <ul id="towns">
+        <li>Sofia</li>
+        <li>Pleven</li>
+        <li>Varna</li>
+        <li>Plovdiv</li>
+    </ul>
+    <input type="text" id="searchText" />
+    <button onclick="search()">Search</button>
+    <div id="result"></div>
+
+<script>
+
+    function search() {
+
+        let matchetItems = [];
+
+        let searchresult = $('#searchText').val();
+        // S val() vzimame tova koeto sme napisali v input poleto !
+        //Vzima stoinostta na poleto moje da ne sme go napisali nie
+
+
+        //Ako dadem samo space ni gi matchva vsichki zatov ako e samo space go promenqme
+        if(searchresult === "")
+        {
+            searchresult = "Nasko";
+        }
+
+
+        //TRQBVA DA POLZVAME   ``   ZA DA MOJEM DA POLZVAME PLACEHOLDER ZA
+        //DA VMUKVAME PROMENLIVI !!!
+
+        //Udebelqvame shtfta na tezi li-ta koito imat kato text $'searchresult'
+        $(`#towns li:contains(${searchresult})`).css('font-weight','bold');
+
+
+        //PRI VTORO NATISKANE NA BUTONA
+        //TEZI KOITO VECHE SA BILI BOLDNATI GI VRUSHTAME KAKTO A SI BILI
+        $(`#towns li:not(:contains(${searchresult}))`).css('font-weight',"100");
+
+            //Trqbva da zapisvame kolko mathches imame !
+        let matches = $(`#towns li:contains(${searchresult})`);
+
+        //V result diva si zapisvame kolko elementa sa efektirani
+        $('#result').text(`${matches.length} matches found.`);
+
+        }
+
+</script>
+
+</body>
+</html>

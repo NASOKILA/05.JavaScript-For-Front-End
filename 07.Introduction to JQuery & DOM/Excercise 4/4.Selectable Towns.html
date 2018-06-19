@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectable Towns</title>
+    <style>
+        li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+        }
+        ul { padding:0; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="select-towns.js"></script>
+</head>
+<body>
+<h2>Towns</h2>
+<ul id="items">
+    <li>Sofia</li>
+    <li>Varna</li>
+    <li>Plovdiv</li>
+    <li>Bourgas</li>
+    <li>Rousse</li>
+</ul>
+<button id="showTownsButton">Show Towns</button>
+<div id="selectedTowns"></div>
+<script>
+    let matched = [];
+    $('#items li').click(function(){
+        $(this).css('background-color','#DDD');
+        matched.push($(this).text());
+        //Slagam si texta ot kliknatoto li v masiva
+    });
+
+    $('#showTownsButton').on("click", function(){
+
+        //slagam si rezultata v diva
+        $('#selectedTowns').text(`Selected towns: ${matched.join(", ")}`)
+
+    });
+
+
+</script>
+</body>
+</html>

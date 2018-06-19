@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--Importvame si JQUERY :-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+<p>
+    Thi is a <a href="https://softuni.bg">Link</a>
+</p>
+<ul>
+    <li id="first">one</li>
+    <li class="second">two</li>
+    <li><p>three</p></li>
+</ul>
+
+
+
+<!--
+    Shte govorim za :
+        1.JQuery Biblioteka
+        2.Selectors
+        3.DOM Elements And Manipulation
+        4.Events (Eventi i kak da se spravqme s tqh)
+
+
+01.JQUERY:
+    Tova e Javascript Biblioteka,
+    polzva se ot 80% ot vsichki saitove, daje
+    i ot Facebook, Google i dr.
+
+    MNOGO E LESNO I UDOBNO ZA POLZVANE.
+    Ima lesen sintaksis !!!
+    Jquery e bezplatno i e opensource.
+
+    Mojem lokalno da go svurjem kato go svalim ot neta
+        vuv fail.
+    Mojem i chrez link d ago vurjem kum nashiq JS fail
+
+        CHREZ :
+
+        OBACHE AKO SPRE NETA NQMA DA MOJEM DA GO POLZVAME.
+
+
+
+    Mnogo ulesnqva programista, pomaga mnogo.
+    Predlaga mnogo resheniq.
+
+
+
+    SINTAXIS:
+
+        Primer: $('li').css('background', '#DDD');
+            $  -  s dolarcheto vzimame vsichki 'li' element
+            .css()  -  s tova gi stilizirame, slagame im background!
+
+
+        .fadeOut() E GOTOVA FUNKCIQ KOQTO SLAGA display:none;
+            na daden element, suzdava iluziaqta che daden element izchezva
+            ZAVISI NA KAKVO I KAK GO PRILAGAME !
+
+
+        event (kato parametur na funkciq)- tova e neshtoto koeto se sluchva.
+        $(this) - pak sochim kum tekushtiq element koito izpolzvame !
+
+        .stopPropagation ni osigurqva che shte promenqme samo edin(tekushtiq)
+        element VMESTO DA PROMENQ VSICHKI OT TOZI TIP.
+
+
+    VSICHKO KOETO MOJEM DA NAPISHEM S JQuery MOJEM DA NAPISHEM S JavaScript
+    Zashtoto Jquery e napraveno ot JavaScript.
+
+
+
+
+MNOOOOOOOOOOGOOOOOOOOO VAJJJJJJNOOOO !!!!!
+    V JQUERY VSICHKO E KOLEKCIQ T.E. BROENETO ZAPOCHVA OT 0 !!!
+
+02.SELECTIRANE V JQUERY:
+    Mojem da dostupvame elementi po :
+        $('div')        //01.Imeto na taga im
+        $('#navigation')//02.Imeto na Id-to im
+        $('.menu-item') //03.Imeto na Klasa im
+        $('ul.menu li') //04.Vzimame po klasa i posle elementa vutre
+        $('.first-li, .second-li') //05.Vzimme crez izbroqvane sus ,
+
+
+
+
+        IMA I DRUGI KAKTO V CSS-a E !!!
+
+    SELEKTIRANETO(DOSTUPVANETO) E TOCHNO KAKTO V CSS !!!
+
+    *  -  selectira vsichki elementi v daden konteiner
+
+FILTER SELECTORI V JQUERY :
+    $('li:even')  -  vzima samo chetnite elementi
+    $('li:odd')  -  vzima samo nechetnite elementi
+    BROENETO ZAPOCHVA VINAGI OT 0 ZSHTOTO VSICHKO E KOLEKCIQ !
+
+    $('li:first-child')  -  vzima samo purviq
+    $('li:last-child')  -  vzima samo posledniq
+    . . .
+    POVECHETO SA PODOBNI KAKTO V CSS !
+
+    $('li:has(p)')  -  vzima samo li elementi koito imat <p> tag v tqh
+    $('li:contains("DadenText")')  -  vzima samo tezi elementi
+         koito imat podadeniq text v tqh
+    $('li:eq(2)')  -  vzima elementa na index 2 sledovatelno tretiq
+    $('li:not(:checked)')  -  vzima samo tezi koito ne otgovarqt na selektora !!!
+
+-->
+
+<script>
+    /*TUK SI PISHEM NA JS*/
+    /*PO DOBRE PROBVAI V BRAWSERA*/
+
+
+    $(document).ready(function(){
+        //.ready() Izpulnqva tova vutre v nego kogato celiq fail se zaredi!
+        // v .ready() imame funkciq v koqto:
+
+        //kazvame che na vsichki <a> tagove pri klikane da
+        //se izpulnqva funkciq koqto da vadi Alert sus suobshtenie
+        $("a").click( function(event){
+            alert("Link is forbidden!");
+
+            event.preventDefault();
+        })
+    });
+
+
+    /*
+
+    $(document).ready(function(){
+
+        // Vsichko v body-to pri klikvane !
+        $('body *').click(function (event) {
+            //event e tova koeto s sluchva !!!
+
+            //pri klikvane na daden element da se izpulni fadeOut() t.e. display: none;
+            $(this).fadeOut();
+
+            //Na mqstoto na tozi element zakachame "Removed : " + this (SamiqElement) + " <br>\n (NOV RED)"
+            $(document.body).append
+            ("Removed : " + this + " <br>\n");
+            event.preventDefault();
+
+            //JQuery avtomatichno promenq vsichki elementi ot daden tip na vednuj,
+            // s tova si osigurqvame che shte se promeni samo tozi element
+            event.stopPropagation();
+        })
+    });
+*/
+    //Ocvetqvame vsichki li elementa !!!
+    $('li').css('background', '#DDD');
+
+</script>
+
+<!--
+
+    VAJNO!!!!!
+        V JAVASCRIPT KOLEKCIQ .map() IZPULVA OPERACIQ VURHU ELEMENTITE NA
+        TAZI KOLEKCIQ.
+
+
+
+-->
+<!--
+DOM ELEMENTI:
+
+    Chrez Jquery mojem da DOBAVQME, MAHAME, MESTIM I
+    PROMENQME HTML elementi
+    direktno v nashiq HTML kod.
+
+    Tova sa HTML elementi, te sa chast ot DOM durvoto.
+
+    Polzvat se mnogo:
+        append() / prepend()
+        appentTo() / prependTo()
+        appendChild() / prependChild()
+
+        remove()
+
+
+    S appendTo() suzdavame nov element i kazvame kude da e.
+    S prependTo() mestim daden sushtestvuvash element kudeto mu kajem.
+
+PRIMERI:
+-->
+
+<div class="wrapper">
+    <p class="toMove">I will be moved.</p> <!--Premestihme go v nachaloto na bodito-->
+    <p class="toRemove">I will be removed</p>
+    <!--Dobavihme si <p> tag s text v nego-->
+</div>
+
+<script>
+    /*V tozi div s klas wrapper shte slojim <p> tag polzvaiki
+    JQuery !!!*/
+
+    //Kak dobavqme s append() ?
+    $('.wrapper').append("<p>Hello its BIG party time</p>");
+
+
+    //Kak dobavqme s appendTo() ?
+    //SAMOCHE DOBAVQ NA VSQKUDE !!!
+    $('<span> --- I am Span element !</span>').appendTo("p");
+
+
+
+
+    /*
+     VAJNOOOOOOOOOOOOOO !!!!!!!!!
+     S JQuery mojem da rabotim vurhu element koito
+     oshte ne sme suzdali, TOVA E NAI DOBRIQ NACHIN :
+     */
+
+    //selectirame taga na elementa koito iskame da suzddem
+    let divToBeCreated = $('<div>');
+
+    //Sagame mu nqkakav text
+    divToBeCreated.text("I AM NEW CREATED DIV !");
+
+    //davame mu nqkakvi stilizacii
+    divToBeCreated.css('font-size','25px')
+        .css('color','orange')
+        .css('background-color','blue');
+
+    //I si go dobavqme v wrappera
+    $(`.wrapper`).append(divToBeCreated);
+
+
+
+
+    //KAK DA MESTIM ELEMENTI S .prependTo()?
+    //Selektirame elementa i kazvame PREDI KOE DA GO NAMESTIM, v sluchaq
+    //go slagame predi body-to
+    $('.toMove').prependTo('body'); // Kazvame che go mahame ot body-to !!!
+
+
+
+
+
+    //Kak da triem elementi s remove();
+
+    $('.toRemove').remove(); //PREMAHVA SELEKIRANIQ ELEMENT
+
+
+
+
+
+</script>
+
+
+
+<!--
+
+EVENTI:
+
+    onClick(); ZNEM GO TOI E NAI IZPOLZVAN !
+    onDoubleClick(): SUSHTOTO E SAMOCHE SE IZPULNQVA PTI DVOINO KLIKVANE !
+    hover();   ZNAEM GO MNOGO E IZPOLZVAN !
+    mouseLeave(); Tove e kogaot izleznem s mishkata ot granicite na neshto !
+    mouseUp();
+    mouseDown();
+    onLoad(); Pri zarejdane na neshto !
+    . . .
+    IMA MNOGO DRUGI KOITO NE SE POLZVAT!
+
+
+    S JQuery mojem da zakachame eventi na butoni linkove i dr
+    ZNAEM CHE Click EVENTA RABOTI S FUNKCII !!!
+
+    KAK STAVA ?
+        $('.KlasNaElement').on('click', ImeNaFunkciq)
+
+    MOJEM D MAHAME EVENT S 'off'
+        $('.KlasNaElement').off('click', ImeNaFunkciq)
+
+PRIMERI:
+-->
+
+<div class="buttonLinks">
+    <button type="button">Click me!</button>
+    <button type="button">Click me!</button>
+    <button type="button">Click me!</button>
+</div>
+
+<script>
+
+    $('.buttonLinks button').on('click', hideLink());
+
+    function hideLink()
+    {
+        $(document).ready(function(){
+           $('button').click(function(){ // kato kliknem da linka
+               $(this).hide(); //da se skrie
+               //this  e  obekta koito klikame
+
+               //hide() e malko po razlichno ot fadeOut() !
+               //ako dadem hide() elementa vednaga izchezva !
+               //pri fadeOut() elementa izchezva po bavno !
+           });
+        });
+    }
+
+</script>
+
+
+<!--
+    SUMMARY:
+        JQuery e biblioteka koqto ni pomaga mnogo i se pishe lesno.
+        Importva se ot neta ili lokalno !!!
+        Selektvane i dostupvane na DOM elementi,
+        dobavqne, mestene, premahvane na DOM elementi,
+        Kakvo sa eventite ? V HTML e onClick / V JS e samo click(),
+            Imame oshte mnogo eventi koito malko ot tqh se polzvat.
+
+        . . .
+-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
