@@ -1,0 +1,130 @@
+
+
+$circleOneColor:#A52A2A;
+$circleOneSize:600px;
+
+$circleTwoColor:#0000FF;
+$circleTwoSize:500px;
+
+$circleThreeColor:#ADFF2F;
+$circleThreeSize:400px;
+
+$circleFiveColor:#FFFF00;
+$circleFiveSize:300px;
+
+$circleHundredColor:#FF0000;
+$circleHundredSize:200px;
+
+$textColor:#fff;
+
+@mixin circle
+{
+  border-radius: 50%;
+  text-align: center;
+  margin:0 auto;
+  border: 1px solid transparent;
+}
+
+@mixin numbers
+{
+  color:  $textColor;
+  position: relative;
+  font-size: 28px;
+  display: inline-block;
+  font-family: Lato;
+  margin:8px;
+}
+
+
+
+body
+{
+  display: block;
+  margin:0 auto;
+  width:800px;
+  text-align: center;
+
+  header
+  {
+    h1
+    {
+      font-size: 30px;
+      font-family: Lato;
+      font-weight: 100;
+    }
+  }
+  main
+  {
+    div>p
+    {
+      @include numbers();
+    }
+
+    .ten
+    {
+      @include circle();
+      background-color: $circleOneColor;
+      height:$circleOneSize;
+      width:$circleOneSize;
+    }
+
+    .twenty
+    {
+      @include circle();
+      background-color: $circleTwoColor;
+      height:$circleTwoSize;
+      width:$circleTwoSize;
+    }
+
+    .thirty
+    {
+      @include circle();
+      background-color: $circleThreeColor;
+      height:$circleThreeSize;
+      width:$circleThreeSize;
+    }
+
+    .fifty
+    {
+      @include circle();
+      background-color: $circleFiveColor;
+      height:$circleFiveSize;
+      width:$circleFiveSize;
+    }
+
+    .hunderd
+    {
+      @include circle();
+      background-color: $circleHundredColor;
+      height:$circleHundredSize;
+      width:$circleHundredSize;
+
+      p
+      {
+        margin-top: 40%;
+      }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
