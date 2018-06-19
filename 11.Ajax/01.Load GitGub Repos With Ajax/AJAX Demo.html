@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>AJAX load</title>
+</head>
+<body>
+<input type="text" id="username" value="testnakov" />
+<button onclick="loadRepos()">Load Repos</button>
+
+<ul id="repos"></ul>
+
+<script>
+    /*
+    function loadRepos() {
+
+
+
+        //AJAX call
+        let username = $('#username').val();
+
+        //Izvikvame ot neta neshto s imeto koeto imame v input formata
+        let promise = $.get(`https://api.github.com/users/${username}/repos`);
+
+        promise.then(loadSuccess);
+
+        */
+
+    //ASINHROMNA FUNKCIQ:
+    async function loadRepos() {
+
+        let username = $('#username').val();
+
+        //S await zaqvkite se izchakvat
+        let promise = await $.get(`https://api.github.com/users/${username}/repos`);
+    //Mojem da printirame i komentrite ot tazi zaqva !!!  let comments = await_comment;
+
+        promise.then(loadSuccess);
+
+    }
+
+
+    //pravim si funkciq
+    function loadSuccess(data) {
+        for(let entry of data){
+
+            //pravim si edno li s <a> vutre s imeto vutre v tqh kato text
+            let li = $(`
+    <li>
+        <a href="${entry.full_url}">${entry.full_name}</a>
+    </li>`);
+
+            //zakachame entrito za spisuka.
+            $('#repos').append(li);
+
+        }
+    }
+
+</script>
+
+</body>
+</html>

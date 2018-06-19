@@ -1,0 +1,87 @@
+
+Kak da pravim zaqvki v brawsera za da dostupim novi danni.
+Ajax.
+XML Http requesti  -  XHR.
+AJAX:
+	Asinhromnno izpulnqvane na operacii, t.e. vurvat nqkolko navdjuj.
+
+Shte polzvame DOM elementi i divove.
+
+S le req = new XMLHttpRequest();  // Zapochvame nov request
+Nie shte polzvame JQuery zashtoto e po lesno.
+
+
+
+Greshkite koito survera ni vrushta sa ot 0 do 599
+Mnogo ot tqh veche gi znaem, kato 404 koeto e NOT FOUND.
+Vseki edin nomer predstavlqva razlichna greshka.
+
+
+SUS .load() mojem da zarejdame drug HTML fail v HTML.
+
+s .get mojem da vzimame i neshta ot neta i da gi pokazvame v HTML-a ili na konzolata.
+
+Pri greshka v AJAX mojem da mu kajem da zulni neshto kato funkciq na primer.
+
+V TAZI LEKCIQ TRQBVA DA SE NAUCHIM KAK DA VZIMAME DANNI OT SERVERA.
+
+1.Zarejdame si JQery.
+
+2.PISHEM: $.ajax(
+	url: `http:// ... `,
+	success: ImeNaFunkciq   //koq funkciq da se izpulni pri vzimane 
+	error: ajaxError ili FUNKCIQ     //Tq shte se izpulni pri greshka.
+)
+
+
+
+ZA DA NAPRAVIM EDNA FUNKCIQ ASIMHROMNNA PISHEM 'async' pred neq.
+I posle vzimame dannite s  $.get(' . . . ') obache pred tqh trqbva da ima dumichkata 'await' 
+koqto oznachava izchakai.
+Shte izglejda taka: await $.get(` . . . `)
+
+S await_comments Vzimame komentara ot predishnata zaqvka.
+
+
+
+FIREBASE:
+	Tova e usluga koqto ni dostavq backend bez da imame server, toi samo suhranqva danni.
+	
+MOJE DA SE SIMULIRA I BACKEND SUS MBaas I FRONTEND SUS NESHTO DRUGO.
+
+OSTANALITE KOMENTARI SA V PROEKTA ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

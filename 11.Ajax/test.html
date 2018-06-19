@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="text" id="postId" value="1" />
+<button onclick="loadPosts()">Load Posts</button>
+
+<div id="posts"></div>
+
+<script>
+
+    function loadPosts() {
+
+    /*Vzimame ot FIREBASE saita danni ot bazata ot proekta koito napravhime.
+      kato slagame linka, v bazata sme si napravili nqkolko posta i
+      sega shte gi vizualizirame na ekrana.
+
+      Pravim si edin div v koito shte slojim infoto za daden post:
+      */
+        let postId = $('#postId').val();
+        let data = $.ajax({
+                url: `https://fir-phonebook-app.firebaseio.com/posts/${postId}.json`,
+                success: (data) => {
+                    $('#posts').html(`
+
+            <article>
+                <header>Title: ${data.Title}</header>
+                <p>Content: ${data.Body}</p>
+                <footer>Author: ${data.Author}</footer>
+            </article>`);
+                }
+            });
+
+    }
+/*HTML-a koito slagame mojem da go slojim vuv funkciq koqto da polzvame.*/
+
+/*Mojem da Pravim GET, POST,DELETE, PUT, UPDATE.*/
+
+
+/*
+    Ot Postman APPLIKACIQTA mojem bezplatno da izprashtame zaqvki.
+    T.e. mojem da si dobavqme postove v bazata na FIREBASE samo kato dobavim
+    linka ot tam..
+*/
+
+
+
+
+</script>
+
+</body>
+</html>
