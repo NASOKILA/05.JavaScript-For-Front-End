@@ -1,0 +1,156 @@
+
+/*TOVA E NASHIQ SASS FAIL KOITO ZAVURSHVANA scss.
+  IMPORTVAME SI GO V HTML, MOJEM PROSTO DA GO DRAGNEM !
+
+  TUK MOJEM DA PISHEM I NA CSS I NA SASS
+
+  TRABVA DA OPRAVIM EDNI NASTROIKI PREDI DA POCHNEM DA POLZVAME TOZI FAIL.
+  Otivame na File>Settings>Tools>File Watchers  I KLIKVAME NA ZELENOTO PLUSCHE
+      ZA DA DOBAVIM 'SCSS' TEMPLATE-a ZA DA MOJEM DA GO POLZVAME.
+
+  Kato dobavim SCSS faila, tam kudeto pishe Program trqbva da slojim
+  putq do scss.bat faila :   'C:\Ruby24-x64\bin\scss.bat' TOVA E MNOGO VAJNO!
+
+  POSLE DA VAME 'Apply'.
+
+  Suzdava ni CSS fail v .scss faila koito trqbva da importnem v nashiq HTML.
+
+  SEGA KATO PISHEM CSS V .scss FAILA NI GENERIRA AVTOMATICHNO NESHTATA V .css FAILA !!!
+
+
+
+  Promenlivite se deklarirat nai otgore.
+  SASS NI DAVA PO DOBUR DOSTUP DO ELEMENTITE, VIJ SLEDNIQ PRIMER:
+
+  MOJEM DA IMPORTVAME SASS FAILOVE V DRUGI SASS FAILOVE SUS
+    DUMATA @import '_ImeNaSassFail'
+    ZADULJITELNO E DA IZPOLZVAME DOLNA CHERTA I TRQBVA DA E V
+    EDINICHNI KAVICHKI, IMPORTVA SE VINAGI NA PURVIQ RED.
+
+*/
+
+
+
+
+//deklarirame si dve promenlivi koito posle shte polzvame
+$li-background-color: blue;
+$li-hover-background-color: red;
+$li-hover-font-size: 15px;
+$body-default-background: navajowhite;
+
+
+//I mogat da sudurjat matematicheki operacii !!!
+$ChetiryPlusShes: 4 + 6;
+
+
+/*
+        MIXINI: Podobni sa na funkciite:
+            Mixina e parche kod koito mojem da polzvame samo s ivikvaneto na
+            imeto na klas ili id-to na tova koeto stilizirame !!!
+*/
+
+//Shte si napravim cqloto li i posle smo shte go izvikame !!!
+@mixin defaultLiElement
+{
+  /*Mojem da polzvame promenlivi vutre v mixinite*/
+  border: 3px solid green;
+  background-color: $li-background-color;
+  display: inline-block;
+  padding:10px;
+  margin: 25px 5px;
+
+  // HOVERA NA SAMIQ ELEMENT SE PISHE VUTRE V NEGO
+  &:hover
+  {
+      background-color: $li-hover-background-color;
+      font-size: $li-hover-font-size;
+      border-radius: 25px;
+      padding: 20px;
+  }
+}
+
+
+body
+{
+  background: $body-default-background;
+}
+
+main
+{
+  border: 1px solid blue;
+
+  div
+  {
+    border: 1px solid red;
+    margin: 25px;
+    ul
+    {
+      border: 1px solid yellow;
+      list-style: none;
+      text-align: center;
+      margin: 25px;
+      li
+      {
+
+        // TAKA SE IZVIKVA MIXINA
+        @include defaultLiElement;
+        a{
+          font-weight: 900;
+          color:white;
+          text-decoration:none;
+        }
+
+      }
+
+      //shte stilizirame srednoto li
+      .second
+      {
+
+        background-color: black;
+        border-radius: 0;
+
+        &:hover
+        {
+          background-color: blueviolet;
+        }
+      }
+
+      .third
+      {
+        //Nasledqvame vsichko ot klasa .second i si dobavqme nashi neshta !
+        @extend .second;
+        background-color: yellow;
+        &:hover
+        {
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+
+/*
+LESS e sushtoto kato SASS samoche s malki razliki:
+        1.Promenlivite se pishat s '@' vmesto s '$' .
+        2.Mixina se pishe s '.' vmesto s '@'.
+        3.Instalira se po razlichen nachin.
+
+        Izbora e nash s koe da rabotim.
+        AKO GI POLZVAME NA IZPITA SHTE POLUCHIM BONUS.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
