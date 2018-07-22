@@ -1,8 +1,7 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
-/*Polzvam font-awesome za ikonite*/
-
-.container.text-center.mx-auto {
+.container.text-center.mx-auto 
+{
     padding-top: 100px;
 }
 
@@ -16,7 +15,6 @@
 {
     position: relative;
     margin-bottom: 0 !important;
-    /*Reshih da go napravq po tozi nachin, kato mahna margina ot dolo!*/
 }
 
 .fa-envelope, .fa-key
@@ -24,18 +22,3 @@
     top:-32px;
     position: absolute;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
