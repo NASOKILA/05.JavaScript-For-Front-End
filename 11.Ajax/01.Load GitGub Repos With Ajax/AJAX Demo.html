@@ -13,7 +13,7 @@
 
 <script>
     /*
-    function loadRepos() {
+		function loadRepos() {
 
 
 
@@ -25,39 +25,25 @@
 
         promise.then(loadSuccess);
 
-        */
+    */
 
-    //ASINHROMNA FUNKCIQ:
     async function loadRepos() {
-
         let username = $('#username').val();
-
-        //S await zaqvkite se izchakvat
         let promise = await $.get(`https://api.github.com/users/${username}/repos`);
-    //Mojem da printirame i komentrite ot tazi zaqva !!!  let comments = await_comment;
-
         promise.then(loadSuccess);
-
     }
 
-
-    //pravim si funkciq
     function loadSuccess(data) {
         for(let entry of data){
 
-            //pravim si edno li s <a> vutre s imeto vutre v tqh kato text
-            let li = $(`
+        let li = $(`
     <li>
         <a href="${entry.full_url}">${entry.full_name}</a>
     </li>`);
-
             //zakachame entrito za spisuka.
             $('#repos').append(li);
-
         }
     }
-
 </script>
-
 </body>
 </html>
