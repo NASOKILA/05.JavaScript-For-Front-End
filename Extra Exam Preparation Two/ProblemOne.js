@@ -1,5 +1,4 @@
 
-
 function renderAllContinents(continents)
 {
     for(let c in continents)
@@ -24,7 +23,6 @@ function renderSingleContinent(continent)
 
 function renderSingleCountry(country)
 {
-
     console.log(country['name']);
     console.log("Capital: " + country['capital']);
     console.log("Official Language: " + country['officialLanguage']);
@@ -38,9 +36,7 @@ function renderSingleCountry(country)
         console.log("Monarch: " + country['monarch']);
 
     console.log("Official Currency: " + country['officialCurrency']);
-
 }
-
 
 let continents = {
     Europe: {
@@ -98,8 +94,3 @@ let continents = {
 renderAllContinents(continents);
 renderSingleContinent(continents['Europe']);
 renderSingleCountry(continents['Europe']['countries']['Bulgaria']);
-
-
-
-
-

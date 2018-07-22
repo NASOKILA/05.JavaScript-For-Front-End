@@ -1,36 +1,20 @@
 
-
-
-
-
-
-
-
 function attachEvents()
 {
 
-
     function renderSingleContinent(continentName) {
-
 
         let continentDiv = $('<div class="continent"></div>')
             .append($('<h5 class="continent-title">'+ continentName +'</h5>'))
             .appendTo($('.continents'));
 
-
-
-
         renderContinentData(continentName);
     }
 
-
     function renderContinentData(continentName)
     {
-
-        //Attach event on continentTitle
         $('.continent-title').unbind('click').bind('click', function() {
 
-            //Chistim si i dvete predi da pochnem da renderirame i suzdavame
             $('.continent-data').empty();
             $('.continent-country').empty();
 
@@ -56,8 +40,6 @@ function attachEvents()
 
             }
 
-
-            //When continent is clicked get single continent
             $.ajax({
                 url:'https://continental-drift.firebaseio.com/continents/'+ continentClickedName +'.json',
                 success:function (continent) {
@@ -69,9 +51,6 @@ function attachEvents()
                     let continentImageDiv = $('<div class="continent-image"></div>')
                         .append($('<img src="images/'+ continentClickedName +'.png"/>'))
                         .appendTo($('.continent-data'));
-
-
-                    //ONLY COUNTRY NAMES
                     
                     let countries = continent['countries'];
                     for (let c in countries)
@@ -81,47 +60,32 @@ function attachEvents()
                         option.appendTo(select);
                     }
 
-
-                    //DROP DOWN MENU EVENT
                     select.click(function (e) {
                         e.preventDefault();
-                        
-                        //Take selected countryName
+                          
                         let selectedOptionCountry = $( ".dropdown-select option:selected" ).text();
 
-                        //Check if it is deferent from the default one
                         if(selectedOptionCountry !== " -- select an option -- ")
                         {
 
-                            //Load the data from the fire database
                             $.ajax({
                                 url:'https://continental-drift.firebaseio.com/continents/'+ continentClickedName +'/countries/'+ selectedOptionCountry +'.json',
                                 success:function (country) {
 
-                                    //And pass it to the function to render it
                                     renderSingleCountry(country);
                                 }
                         });
                             
-                        
                         }
-
                     })
-
                 }
             });
-
         });
-
     }
 
     function renderSingleCountry(country) {
 
-
-        //chistim predi da renderirame
         $('.continent-country').empty();
-
-        // render country data
 
         let name = country['name'];
         let capital = country['capital'];
@@ -139,9 +103,6 @@ function attachEvents()
             monarch = country['monarch'];
 
         let officialCurrency = country['officialCurrency'];
-
-
-        //Country Data Elements
 
         let countryTitleDiv = $('<div class="country-title"></div>')
             .append($('<h2>' + name + '</h2>'))
@@ -196,24 +157,17 @@ function attachEvents()
 
     }
 
-
-    //get all continents and pass their names
     $.ajax({
         url:'https://continental-drift.firebaseio.com/continents.json',
         success:function(response){
 
-
-            //pass only continentsNames
             for(let c in response)
             {
                 let continentName = response[c]['name'];
                 renderSingleContinent(continentName);
             }
         }
-
     });
-
 }
 
-
-attachEvents(); //pass the continents object
+attachEvents(); 

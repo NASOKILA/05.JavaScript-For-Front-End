@@ -1,18 +1,13 @@
 
-
 function renderDataInHTML(continents) {
 
-    //Render continenrs
     for(let c in continents)
-    {
-        //Render each continent data
+    {   
         let continent = continents[c];
         let continentName = continent['name'];
 
         let continentCountries = continent['countries'];
-
-
-        //create the elements
+        
         let continentDiv = $('<div class="continent"></div>')
             .append($('<h5 class="continent-title">'+ continentName +'</h5>'))
             .appendTo($('.continents'));
@@ -21,14 +16,8 @@ function renderDataInHTML(continents) {
             .append($('<h2 class="continent-title">'+ continentName +'</h2>'))
             .append($('<h3 class="countries-title">Countries</h3>'));
 
-
-
-        //Render countries
-
-
         for(let c in continentCountries)
         {
-            //Render each country data
             let country = continentCountries[c];
 
             let name = country['name'];
@@ -48,10 +37,6 @@ function renderDataInHTML(continents) {
 
             let officialCurrency = country['officialCurrency'];
 
-
-
-            //Create country elements
-
             let select = $('<select class="dropdown-select"></select>')
                 .append($('<option disabled selected value> -- select an option -- </option>'))
                 .append($('<option value="'+ name +'">'+ name +'</option>'))
@@ -60,10 +45,6 @@ function renderDataInHTML(continents) {
             let continentImageDiv = $('<div class="continent-image"></div>')
                 .append($('<img src="images/'+ continentName +'.png"/>'))
                 .appendTo($('.continent-data'));
-
-
-
-            //Country Data Elements
 
             let countryTitleDiv = $('<div class="country-title"></div>')
                 .append($('<h2>'+ name +'</h2>'))
@@ -116,15 +97,9 @@ function renderDataInHTML(continents) {
                 .append($('<strong>Official Currency:</strong>'))
                 .append($('<div>'+ officialCurrency +'</div>'))
                 .appendTo(countryDataDiv);
-
         }
-
-
     }
-
 }
-
-
 
 let continents = {
     Europe: {
@@ -145,11 +120,3 @@ let continents = {
 };
 
 renderDataInHTML(continents);
-
-
-
-
-
-
-
-

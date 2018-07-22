@@ -1,18 +1,9 @@
 
-
-
-
-
 function attachEvents(continents)
 {
-
     function renderSingleCountry(country) {
 
-
-        //chistim predi da renderirame
         $('.continent-country').empty();
-
-        // render country data
 
             let name = country['name'];
             let capital = country['capital'];
@@ -30,9 +21,6 @@ function attachEvents(continents)
                 monarch = country['monarch'];
 
             let officialCurrency = country['officialCurrency'];
-
-
-            //Country Data Elements
 
             let countryTitleDiv = $('<div class="country-title"></div>')
                 .append($('<h2>' + name + '</h2>'))
@@ -83,19 +71,14 @@ function attachEvents(continents)
                 .append($('<strong>Official Currency:</strong>'))
                 .append($('<div>' + officialCurrency + '</div>'))
                 .appendTo(countryDataDiv);
-
-
     }
 
     function renderContinentData(continent)
     {
         let continentName = continent['name'];
 
-        //Attach event on continentTitle
         $('.continent-title').unbind('click').bind('click', function() {
 
-
-            //Chistim si i dvete predi da pochnem da renderirame i suzdavame
             $('.continent-data').empty();
             $('.continent-country').empty();
 
@@ -118,11 +101,9 @@ function attachEvents(continents)
                 $(this).addClass("clicked");
                 $('.continent-data').css('display', 'block');
                 $('.continent-country').css('display', 'block');
-
             }
 
             let countries = continents[continentClickedName]['countries'];
-
 
             let select = $('<select class="dropdown-select"></select>')
                 .append($('<option disabled selected value> -- select an option -- </option>'))
@@ -132,8 +113,6 @@ function attachEvents(continents)
                 .append($('<img src="images/'+ continentClickedName +'.png"/>'))
                 .appendTo($('.continent-data'));
 
-
-            //Dobavqme si durjavite kato optioni v selekta:
             for (let cc in countries)
             {
                 let countryName = countries[cc]['name'];
@@ -141,40 +120,29 @@ function attachEvents(continents)
                 option.appendTo(select);
             }
 
-
             select.click(function (e) {
                 e.preventDefault();
 
-                //Take selected country
                 let selectedOption = $( ".dropdown-select option:selected" ).text();
 
-                //Check if it is deferent from the default one
                 if(selectedOption !== " -- select an option -- ")
                 {
-                    //And pass it to the function to render it
                     renderSingleCountry(countries[selectedOption]);
                 }
-
             })
-
-
         });
-
     }
 
     function renderSingleContinent(continent) {
 
         let continentCountries = continent['countries'];
 
-        //create the elements
         let continentDiv = $('<div class="continent"></div>')
             .append($('<h5 class="continent-title">'+ continent['name'] +'</h5>'))
             .appendTo($('.continents'));
 
-
         renderContinentData(continent);
     }
-
 
     for(let c in continents)
     {
@@ -182,7 +150,6 @@ function attachEvents(continents)
         renderSingleContinent(continent);
     }
 }
-
 
 let continents = {
     Europe: {
@@ -237,4 +204,4 @@ let continents = {
     }
 };
 
-attachEvents(continents); //pass the continents object
+attachEvents(continents); 
