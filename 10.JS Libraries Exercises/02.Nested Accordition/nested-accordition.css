@@ -1,6 +1,4 @@
 
-
-
 .panel-group .panel-heading + .panel-collapse > .panel-body {
     border: 1px solid #ddd;
 }
@@ -55,4 +53,3 @@
 .panel-group .panel-body ol:last-child {
     margin-bottom: 0;
 }
-
