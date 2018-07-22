@@ -1,39 +1,11 @@
-/*TOVA E NASHIQ SASS FAIL KOITO ZAVURSHVANA scss.
-  IMPORTVAME SI GO V HTML, MOJEM PROSTO DA GO DRAGNEM !
 
-  TUK MOJEM DA PISHEM I NA CSS I NA SASS
-
-  TRABVA DA OPRAVIM EDNI NASTROIKI PREDI DA POCHNEM DA POLZVAME TOZI FAIL.
-  Otivame na File>Settings>Tools>File Watchers  I KLIKVAME NA ZELENOTO PLUSCHE
-      ZA DA DOBAVIM 'SCSS' TEMPLATE-a ZA DA MOJEM DA GO POLZVAME.
-
-  Kato dobavim SCSS faila, tam kudeto pishe Program trqbva da slojim
-  putq do scss.bat faila :   'C:\Ruby24-x64\bin\scss.bat' TOVA E MNOGO VAJNO!
-
-  POSLE DA VAME 'Apply'.
-
-  Suzdava ni CSS fail v .scss faila koito trqbva da importnem v nashiq HTML.
-
-  SEGA KATO PISHEM CSS V .scss FAILA NI GENERIRA AVTOMATICHNO NESHTATA V .css FAILA !!!
-
-
-
-  Promenlivite se deklarirat nai otgore.
-  SASS NI DAVA PO DOBUR DOSTUP DO ELEMENTITE, VIJ SLEDNIQ PRIMER:
-
-  MOJEM DA IMPORTVAME SASS FAILOVE V DRUGI SASS FAILOVE SUS
-    DUMATA @import '_ImeNaSassFail'
-    ZADULJITELNO E DA IZPOLZVAME DOLNA CHERTA I TRQBVA DA E V
-    EDINICHNI KAVICHKI, IMPORTVA SE VINAGI NA PURVIQ RED.
-
-*/
-/*
         MIXINI: Podobni sa na funkciite:
             Mixina e parche kod koito mojem da polzvame samo s ivikvaneto na
             imeto na klas ili id-to na tova koeto stilizirame !!!
 */
 body {
-  background: navajowhite; }
+  background: navajowhite; 
+}
 
 main {
   border: 1px solid blue; }
@@ -46,7 +18,6 @@ main {
       text-align: center;
       margin: 25px; }
       main div ul li {
-        /*Mojem da polzvame promenlivi vutre v mixinite*/
         border: 3px solid green;
         background-color: blue;
         display: inline-block;
@@ -70,15 +41,3 @@ main {
         background-color: yellow; }
         main div ul .third:hover {
           background-color: red; }
-
-/*
-LESS e sushtoto kato SASS samoche s malki razliki:
-        1.Promenlivite se pishat s '@' vmesto s '$' .
-        2.Mixina se pishe s '.' vmesto s '@'.
-        3.Instalira se po razlichen nachin.
-
-        Izbora e nash s koe da rabotim.
-        AKO GI POLZVAME NA IZPITA SHTE POLUCHIM BONUS.  
-*/
-
-/*# sourceMappingURL=SassStyles.css.map */
