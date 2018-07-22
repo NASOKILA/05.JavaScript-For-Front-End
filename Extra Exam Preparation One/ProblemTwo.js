@@ -47,9 +47,7 @@ function renderDataInHTML(location) {
         .append($('<div class="pokemon-evolved-from">Evolved From: '+ pokemonEvolvedFrom +'</div>'))
         .append($('<div class="pokemon-evolves-to">Evolves To: '+ pokemonEvolvedTo +'</div>'))
         .appendTo(pokemonDiv);
-
     }
-
 }
 
 let location2 = {
@@ -71,6 +69,5 @@ let location2 = {
         }
     }
 };
+
 renderDataInHTML(location2);
-
-

@@ -63,9 +63,6 @@ function attachEvents() {
                         .append($('<div class="pokemon-evolved-from">Evolved From: '+ pokemonEvolvedFrom +'</div>'))
                         .append($('<div class="pokemon-evolves-to">Evolves To: '+ pokemonEvolvedTo +'</div>'))
                         .appendTo(pokemonDiv);
-
-
-
                 }
 
                 attackAccordonEvent();
@@ -85,27 +82,11 @@ function attachEvents() {
                                 $this.next().toggleClass('show');
                                 $this.next().slideToggle(350);
                             }
-
                     })
                 }
-
             }
-
         }
     });
 
     $('.location-input').val('');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

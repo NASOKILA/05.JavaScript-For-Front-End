@@ -1,5 +1,4 @@
 
-
 $('button').click(function () {
     attachEvents();
 });
@@ -14,21 +13,3 @@ function attachEvents() {
 
     $('.location-input').val('');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

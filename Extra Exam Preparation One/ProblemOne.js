@@ -1,9 +1,4 @@
 
-
-
-
-
-
 function renderData(location)
 {
     let locationName = location['name'];
@@ -26,9 +21,6 @@ function renderData(location)
         console.log("###Evolves To: " + pokemon['evolvesTo']);
     }
 }
-
-
-
 
 let location = {
     name: 'Izgrev',
@@ -57,16 +49,3 @@ let location = {
 };
 
 renderData(location);
-
-
-
-
-
-
-
-
-
-
-
-
-
