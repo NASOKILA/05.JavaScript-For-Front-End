@@ -8,16 +8,9 @@ function timer() {
     let minutes = 0;
     let hours = 0;
 
-
-
     let timer;
     $('#start-timer').click(function() {
 
-        //Imame funkciq kato parametur sus
-        // milisekundi kato time interval t.e. funkciqta se izpulnqva
-        //na vseki 1000 milisekundi
-
-        //keep only one function active
         if(seconds === 0) {
             timer = setInterval(function () {
 
@@ -55,48 +48,14 @@ function timer() {
 
     $('#stop-timer').click(function() {
 
-        clearInterval(timer); //Spirame timera
-
-        //printirame rezultata:
+        clearInterval(timer); 
 
         $('#seconds').val(seconds);
         $('#minutes').val(minutes);
         $('#hours').val(hours);
 
-        //setvame vsichko na nula
         seconds = 0;
         minutes = 0;
         hours = 0;
-
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
