@@ -1,6 +1,4 @@
 
-
-
 function renderDataInHTML(args) {
 
     let container = $('<div class="container"></div>');
@@ -30,8 +28,6 @@ function renderDataInHTML(args) {
     $('body').append(container);
 
     //Pokemons:
-
-    //Ako nqma pokemoni spirame do tuk
     if(!args.pokemons)
         return;
 
@@ -119,4 +115,3 @@ let Loaction2 = {
 };
 
 renderDataInHTML(Loaction);
-

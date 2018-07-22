@@ -10,7 +10,7 @@
 
  let pokemons = args.pokemons;
 
- if(pokemons) { //Proverqvame dali vuobshte ima pokemoni
+ if(pokemons) { 
 
  console.log('Pokemons:');
  for (let p in pokemons) {

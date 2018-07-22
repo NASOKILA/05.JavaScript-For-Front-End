@@ -4,20 +4,17 @@ $('button').click(function (e) {
 
     $('.result').empty();
 
-    //vzimame ot formata
     let locationName = $('.location-input').val();
     $('.result').css('display', 'block');
 
     if(locationName === "")
         return;
 
-    //send get request
     $.ajax('https://pokemoncodex.firebaseio.com/locations/'+ locationName +'.json',{
 
         type:'GET',
         success:function(response){
             //“Lyulin”, “Dianabad”, “Mladost”.
-
 
             if(response === null)
             {
@@ -28,19 +25,9 @@ $('button').click(function (e) {
                 return;
             }
 
-            //podavame obekta na funkciqta ot vtorata zadacha
             renderDataInHTML(response);
 
             $('.location-input').val('');
-
-/*
-            $('.pokemon').click(function(){
-                console.log('open');
-
-                //$('.pokemon-stats').css('display', 'block');
-            });
-*/
-
         }
     });
 
@@ -78,8 +65,6 @@ function renderDataInHTML(args) {
     container.append(result);
     $('.result').append(container);
 
-    //Pokemons:
-    //Ako nqma pokemoni spirame do tuk ako ne gi suzdavame
     if(!args.pokemons)
         return;
 
@@ -116,16 +101,12 @@ function renderDataInHTML(args) {
         let pokemonevolvedTo = $('<div class="pokemon-evolved-from">');
         pokemonevolvedTo.text('Evolved To: ' + args.pokemons[i].evolvesTo);
         pokemonevolvedTo.appendTo(pokemonStats);
-
     }
 
-    //Hover
     $('.pokemon-title').hover(function(){
         $('.pokemon-title').css('cursor', 'default');
     });
 
-
-    //Expand pokemon-stats    BEZ ACCORDON
     $('.pokemon').click(function(){
 
         let thisPokemon = $(this)[0];
@@ -136,9 +117,4 @@ function renderDataInHTML(args) {
         else
             $(thisPokemonStats).css('display', 'none');
     });
-    
 }
-
-
-
-
