@@ -32,11 +32,8 @@ function renderAllPunshesInHTML(punshes) {
             .append($('<h4>'+ punshName +'</h4>'))
             .appendTo(navbarItemsDiv);
 
-        //V Gifcheto cursora idva na h4 taga a ne na samiq navbar-item
-        // zatova shte go smenq da si bude ne <h4>
         navbarItemDiv.css('cursor','default');
         $('h4').css('cursor','pointer');
-
     }
 }
 
@@ -84,11 +81,5 @@ function renderSinglePunshInHTML(punshes, punshName) {
                 .append($('<p>' + passedPunshDescription + '</p>'))
                 .appendTo(punshDataDiv);
         }
-
     }
 }
-
-
-
-
-

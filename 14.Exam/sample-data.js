@@ -30,7 +30,6 @@ function renderAllPunshes(punshes) {
         console.log(punshName);
 
     }
-
 }
 
 function renderSinglePunsh(punshes, punshName) {
@@ -47,9 +46,6 @@ function renderSinglePunsh(punshes, punshName) {
             console.log("Type: " + punshes[i]['type']);
             console.log("Contents: " + punshes[i]['contents']);
             console.log("Description: " + punshes[i]['description']);
-
         }
     }
-
 }
-

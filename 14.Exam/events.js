@@ -1,6 +1,4 @@
 
-
-
 let punshes = {
     0: {
         name: "One Punsh Man",
@@ -30,7 +28,6 @@ function attachPunshesEvents(punshes) {
 
 function renderAllPunshesInHTML(punshes) {
 
-    //Zakachame si itemite zashtoto gi nqmame
     let navbarItemsDiv = $('<div class="navbar-items"></div>')
         .appendTo($('.navbar'));
 
@@ -41,29 +38,17 @@ function renderAllPunshesInHTML(punshes) {
             .append($('<h4>'+ punshName +'</h4>'))
             .appendTo(navbarItemsDiv);
 
-
-
-        //V Gifcheto cursora idva na <h4> a ne na samiq navbar-item
-        // zatova shte go smenq da si bude ne <h4>
         navbarItemDiv.css('cursor','default');
         $('h4').css('cursor','pointer');
 
-
-        //Event to .navbar-item
         navbarItemDiv.unbind('click').bind('click',function(e){
 
-            //mahame navbar-items
             navbarItemsDiv.remove();
 
-            //renderirame informaciqta za kliknatiq push
             let punshToRender = $(this)[0].innerText;
 
-            //podavame go kum renderSinglePunshInHTML Tam mi e back eventa
             renderSinglePunshInHTML(punshes, punshToRender);
-
         });
-
-
     }
 }
 
@@ -77,7 +62,6 @@ function renderSinglePunshInHTML(punshes, punshName) {
 
         if (punshname === punshName) {
 
-            //Namerihme podadeniq punsh
             let punsh = punshes[i];
 
             let passedPunshName = punshes[i]['name'];
@@ -92,17 +76,11 @@ function renderSinglePunshInHTML(punshes, punshName) {
             let contentHeadingDiv = $('<div class="content-heading">' + passedPunshName + '</div>')
                 .appendTo(contentHeaderDiv);
 
-
-            //set cursor to be pointer
             contentHeadingDiv.css('cursor','pointer');
 
-
-            //Vednaga seld suzdavaneto na elementa mu zakacham backEventa
-            //Back Event
             $(contentHeadingDiv).click(function(){
                 attachBackEvents(allPunshes);
             });
-
 
             let punshDataDiv = $('<div class="punsh-data"></div>')
                 .appendTo($('.content'));
@@ -122,22 +100,12 @@ function renderSinglePunshInHTML(punshes, punshName) {
                 .append($('<p>' + passedPunshDescription + '</p>'))
                 .appendTo(punshDataDiv);
         }
-
     }
 }
 
 function attachBackEvents(punches) {
 
-    //clear the content
     $('.content-header').remove();
     $('.punsh-data').remove();
-
-    //render all punshes again
     attachPunshesEvents(punshes);
 }
-
-
-
-
-
-

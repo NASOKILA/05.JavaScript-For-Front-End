@@ -1,18 +1,13 @@
 
-
-//1.
-//vzimame si vsichki punishes i gi podavame imenata im na attachPunshesEvents()
 $.ajax({
     url:'https://punsh-master.firebaseio.com/data/punshes.json',
     success:function(response){
         let punshes = response;
 
-        //ot tqh vzimame samo imenata
         let punshesNames = [];
         for(let i in punshes)
             punshesNames.push(punshes[i]['name']);
 
-        //i gi podavame
         attachPunshesEvents(punshesNames);
     }
 });
@@ -24,7 +19,6 @@ function attachPunshesEvents(punshesNames) {
 
 function renderAllPunshesInHTML(punshesNames) {
 
-//Zakachame si itemite zashtoto gi nqmame
     let navbarItemsDiv = $('<div class="navbar-items"></div>')
         .appendTo($('.navbar'));
 
@@ -35,16 +29,11 @@ function renderAllPunshesInHTML(punshesNames) {
             .append($('<h4>'+ punshName +'</h4>'))
             .appendTo(navbarItemsDiv);
 
-
-        //Event
         navbarItemDiv.unbind('click').bind('click',function(e){
 
             //2.
             //remove navbar-items
             navbarItemsDiv.remove();
-
-            //renderirame informaciqta za kliknatiq push
-            //Za da gi vzimam po edinichno mi trqbva indexa
 
             let punshToRender = $(this)[0].innerText;
             let indexOfPunshToRender;
@@ -54,20 +43,13 @@ function renderAllPunshesInHTML(punshesNames) {
                     indexOfPunshToRender = i;
             }
 
-            //Sled kato imame indexa ostava samo da zaredim kliknatiq punch
-            //LOAD the punsh’s data
             $.ajax({
                 url:'https://punsh-master.firebaseio.com/data/punshes/'+ indexOfPunshToRender +'.json',
                 success:function(punshToPass){
-
-                    //Render the data in a .content element.
                     renderSinglePunshInHTML(punshesNames, punshToPass);
                 }
             });
-
-
         })
-
     }
 }
 
@@ -81,7 +63,6 @@ function renderSinglePunshInHTML(punshesNames, punshToPass) {
 
         if (punshname === punshToPass['name']) {
 
-            //Namerihme podadeniq punsh
             let punsh = punshToPass;
 
             let passedPunshName = punshToPass['name'];
@@ -97,13 +78,10 @@ function renderSinglePunshInHTML(punshesNames, punshToPass) {
 
             contentHeadingDiv.css('cursor','pointer');
 
-
-            //Attach The Back Event
             contentHeadingDiv.click(function()
             {
                 attachBackEvents(allNames);
             });
-
 
             let punshDataDiv = $('<div class="punsh-data"></div>')
                 .appendTo($('.content'));
@@ -122,20 +100,13 @@ function renderSinglePunshInHTML(punshesNames, punshToPass) {
                 .append($('<label>Description: </label>'))
                 .append($('<p>' + passedPunshDescription + '</p>'))
                 .appendTo(punshDataDiv);
-
         }
-
     }
 }
 
 function attachBackEvents(allNames) {
 
-    //clear the content
     $('.content-header').remove();
     $('.punsh-data').remove();
-
-    //Repeta the first step render all punshes again
      attachPunshesEvents(allNames);
 }
-
-
