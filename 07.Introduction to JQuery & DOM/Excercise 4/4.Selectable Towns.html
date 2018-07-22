@@ -30,17 +30,11 @@
     $('#items li').click(function(){
         $(this).css('background-color','#DDD');
         matched.push($(this).text());
-        //Slagam si texta ot kliknatoto li v masiva
     });
 
     $('#showTownsButton').on("click", function(){
-
-        //slagam si rezultata v diva
         $('#selectedTowns').text(`Selected towns: ${matched.join(", ")}`)
-
     });
-
-
 </script>
 </body>
 </html>

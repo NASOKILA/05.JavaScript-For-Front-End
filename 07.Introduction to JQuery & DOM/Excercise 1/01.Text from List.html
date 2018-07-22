@@ -12,29 +12,14 @@
         <li class="three">third item</li>
     </ul>
 <button onclick="extractText()">Extract Text</button>
-    <!--Kazvame da se izpulni tazi funkciq pri klikae na butona !!!-->
-
-    <!--Tozi div ni trqbva za da izprintim rezultata v nego !!!-->
 <div id="result"></div>
-
-
 <script>
-        /*Po dobre e da pishem na otdelen fail !!!*/
     function extractText() {
-
-
-        let result =  []; // pravim si masiv v koito shte slojim content na li-tata
-
-        //selektirame li elementite i tqhnoto sadurjanie i gi slagame v masiva
+        let result =  []; 
         $('#items li').each((index, element)=>(result.push(element.textContent)));
 
-        //sega trqbva da gi dipleynem na ekrana
-        //dostupvame div elementa i slagame masiva vutre joinnati s  .join(", ");
         $('#result').text(result.join(", "));
-
     }
-
 </script>
-
 </body>
 </html>
