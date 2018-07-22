@@ -32,8 +32,6 @@ function renderSingleContinentInHTML(continent) {
     //Countries
     let countries = continent['countries'];
 
-
-    // VZIMAME SAMO IMENATA NA DURJAVITE
     let countriesNames = [];
     for(let i in countries)
     {
@@ -50,34 +48,26 @@ function renderSingleContinentInHTML(continent) {
         option.appendTo(select);
 
         select.click(function () {
-            //find he selected value and render
 
             let valueOfSelectedOption = $('select option:selected').filter(':selected').text();
 
 
             if(countryName === valueOfSelectedOption)
             {
-                //VZIMAME DURJAVATA PO IMETO I PO KONTINENTA
                 $.ajax({
                     url:'https://continental-drift.firebaseio.com/continents/'+ continentName +'/countries/'+ countryName +'.json',
                     success:function(res){
 
-                        //RENDERIRAME VZETATA DURJAVA
                         renderSingleCountryInHTML(res);
                     }
                 });
-
             }
-
         });
-
     }
-
 }
 
 function renderSingleCountryInHTML(country)
 {
-
     let continentCountry = $('.continent-country');
 
     $('.continent-country').empty();
@@ -104,7 +94,6 @@ function renderSingleCountryInHTML(country)
     let politicalStatus = $('<div class="country-political-status"><strong>Political Status:</strong> <div>'+ country['politicalStatus'] +'</div></div>')
     politicalStatus.appendTo(countryData);
 
-    //monarch or republic
     if(country['politicalStatus'] === "Republic")
     {
         let president = $('<div class="country-president"><strong>President:</strong> <div>'+ country['president'] +'</div></div>')
@@ -116,10 +105,8 @@ function renderSingleCountryInHTML(country)
         monarch.appendTo(countryData);
     }
 
-
     let officialCurrency = $('<div class="country-official-currency"><strong>Official Currency:</strong> <div>'+ country['officialCurrency'] +'</div></div>')
     officialCurrency.appendTo(countryData);
-
 }
 
 function attachEvents() {
@@ -137,7 +124,6 @@ function attachEvents() {
                 continentsNames.push(continents[i]['name']);
             }
 
-            //SAMO IMENATA NA KONTINENTITE
             for (let index in continentsNames) {
 
                 let continentName = continentsNames[index];
@@ -148,16 +134,13 @@ function attachEvents() {
                 let continentTitle = $('<h5 class="continent-title">' + continentName + '</h5>');
                 continentTitle.appendTo(continentDiv);
 
-                //zakachame eventa
                 continentDiv.click(function (response) {
                     response.preventDefault();
 
-                    //Purvo izchistvame vsichki
                     $('.continent-data').empty();
 
                     $('.continent-country').empty();
 
-                    //ako veche ima takuv klas clicked skrivame vsichko zashtoto znaem che e otvoren
                     if($(this).hasClass("clicked"))
                     {
                         $('.continent-data').css("display","none");
@@ -166,10 +149,7 @@ function attachEvents() {
                         $(this).removeClass("clicked")
                     }
                     else
-                    {
-                        //ako nqma klas "clicked" v tozi div, mahame "clicked" ot vichki divove
-                        //slagame go samo na tekuchtiq i pokazvame dannite mu, taka znaem che samo tozi e kliknat.
-
+                    {  
                         $('.continent').removeClass("clicked");
                         $(this).addClass("clicked");
 
@@ -177,26 +157,18 @@ function attachEvents() {
                         $('.continent-country').css("display","block");
                     }
 
-
-                    //Vzimame dadeniq kontinent i go renderirame
                     $.ajax({
                         url:'https://continental-drift.firebaseio.com/continents/'+ continentName +'.json',
                         success: function(r){
-
-                            //RENDERIRAME VZETIQ KONTINENT
+                           
                             renderSingleContinentInHTML(r);
                         }
                     });
-
                 });
             }
-
         }
-
     });
-
 }
-
 
 let continents = {
     Europe: {

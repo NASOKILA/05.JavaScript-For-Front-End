@@ -1,8 +1,4 @@
 
-
-
-
-
 function renderAllContinentsInHTML(continents)
 {
     let continentData = $('.continent-data');
@@ -20,7 +16,6 @@ function renderAllContinentsInHTML(continents)
         continentTitle.appendTo(continentDiv);
 
         renderSingleContinentInHTML(continent);
-
     }
 }
 
@@ -45,7 +40,6 @@ function renderSingleContinentInHTML(continent) {
     let option = $('<option disabled selected value> -- select an option -- </option>');
     option.appendTo(select);
 
-
     //Image
     let continentImageDiv = $('<div class="continent-image" ></div>');
     continentImageDiv.appendTo($('.continent-data'));
@@ -53,7 +47,6 @@ function renderSingleContinentInHTML(continent) {
     let imageName = continentName.toLowerCase();
     let continentImg = $('<img src=" '+ 'images/' + imageName + '.png' + ' ">');
     continentImg.appendTo(continentImageDiv);
-
 
     //Countries
     let countries = continent['countries'];
@@ -67,12 +60,10 @@ function renderSingleContinentInHTML(continent) {
 
         renderSingleCountryInHTML(country);
     }
-
 }
 
 function renderSingleCountryInHTML(country)
 {
-
     let continentCountry = $('.continent-country');
 
     let countryTitle = $('<div class="country-title"></div>');
@@ -94,7 +85,6 @@ function renderSingleCountryInHTML(country)
     let area = $('<div class="country-area"><strong>Area:</strong> <div>'+ country['area'] + " km" +' <sup>2</sup></div></div>');
     area.appendTo(countryData);
 
-
     let politicalStatus = $('<div class="country-political-status"><strong>Political Status:</strong> <div>'+ country['politicalStatus'] +'</div></div>')
     politicalStatus.appendTo(countryData);
 
@@ -111,18 +101,12 @@ function renderSingleCountryInHTML(country)
 
     let officialCurrency = $('<div class="country-official-currency"><strong>Official Currency:</strong> <div>'+ country['officialCurrency'] +'</div></div>')
     officialCurrency.appendTo(countryData);
-
 }
-
 
 function renderDataInHTML(continents) {
 
     renderAllContinentsInHTML(continents);
-
 }
-
-
-
 
 let continents2 = {
     Europe: {
@@ -195,6 +179,4 @@ let continents = {
     }
 };
 
-renderDataInHTML(continents); //pass the continents object
-
-
+renderDataInHTML(continents); 

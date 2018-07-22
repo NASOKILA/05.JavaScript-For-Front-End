@@ -49,16 +49,12 @@ function renderSingleContinentInHTML(continent) {
                 if(countries[c].name === valueOfSelectedOption)
                     renderSingleCountryInHTML(countries[c]);
             }
-
         });
-
     }
-
 }
 
 function renderSingleCountryInHTML(country)
 {
-
     let continentCountry = $('.continent-country');
 
     $('.continent-country').empty();
@@ -97,16 +93,12 @@ function renderSingleCountryInHTML(country)
         monarch.appendTo(countryData);
     }
 
-
     let officialCurrency = $('<div class="country-official-currency"><strong>Official Currency:</strong> <div>'+ country['officialCurrency'] +'</div></div>')
     officialCurrency.appendTo(countryData);
-
 }
-
 
 function attachEvents(continents) {
 
-    //zarejdame vsichki imena kontinenti
     for (let index in continents) {
 
         let continent = continents[index];
@@ -119,16 +111,13 @@ function attachEvents(continents) {
         let continentTitle = $('<h5 class="continent-title">' + continentName + '</h5>');
         continentTitle.appendTo(continentDiv);
 
-        //zakachame eventa
         continentDiv.click(function (response) {
             response.preventDefault();
 
-            //Purvo izchistvame vsichki
             $('.continent-data').empty();
 
             $('.continent-country').empty();
 
-            //ako veche ima takuv klas clicked skrivame vsichko zashtoto znaem che e otvoren
             if($(this).hasClass("clicked"))
             {
                 $('.continent-data').css("display","none");
@@ -137,10 +126,7 @@ function attachEvents(continents) {
                 $(this).removeClass("clicked")
             }
             else
-            {
-                //ako nqma klas "clicked" v tozi div, mahame "clicked" ot vichki divove
-                //slagame go samo na tekuchtiq i pokazvame dannite mu, taka znaem che samo tozi e kliknat.
-
+            {  
                 $('.continent').removeClass("clicked");
                 $(this).addClass("clicked");
 
@@ -152,7 +138,6 @@ function attachEvents(continents) {
         });
     }
 }
-
 
 let continents = {
     Europe: {
@@ -207,4 +192,4 @@ let continents = {
     }
 };
 
-attachEvents(continents); //pass the continents object
+attachEvents(continents);

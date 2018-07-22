@@ -7,7 +7,6 @@ function renderAllContinents(args)
     }
 }
 
-
 function renderSingleContinent(args)
 {
     let continentName = args['name'];
@@ -22,10 +21,8 @@ function renderSingleContinent(args)
     }
 }
 
-
 function renderSingleCountry(args)
 {
-
     console.log(args.name);
     console.log('Capital: ' + args.capital);
     console.log('Official Language: ' + args.officialLanguage);
@@ -44,8 +41,6 @@ function renderSingleCountry(args)
 
     console.log('Official Curency: ' + args.officialCurrency);
 }
-
-
 
 let continents = {
     Europe: {
@@ -99,10 +94,3 @@ let continents = {
         }
     }
 };
-
-
-//renderAllContinents(continents);
-//renderSingleContinent(continents['Europe']);
-//renderSingleCountry(continents['Europe']['countries']['Bulgaria']);
-
-
