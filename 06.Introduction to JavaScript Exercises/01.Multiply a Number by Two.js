@@ -1,6 +1,4 @@
 
-
-
 function solve(args)
 {
     let result = Number(args);
@@ -14,21 +12,3 @@ solve(['3']);
 solve(['30']);
 
 solve(['13']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

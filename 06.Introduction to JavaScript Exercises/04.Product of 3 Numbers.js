@@ -2,8 +2,6 @@
  * Created by user on 11/11/2017.
  */
 
-
-
 function solve(args) {
 
     let x = args[0];
@@ -33,10 +31,3 @@ function solve(args) {
 //solve(['5','4','3']);
 
 solve(['-3','-4','-5']);
-
-
-
-
-
-
-

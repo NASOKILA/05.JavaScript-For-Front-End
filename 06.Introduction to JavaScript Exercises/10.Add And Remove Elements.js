@@ -15,9 +15,8 @@ function solve(args) {
         else if(command === "remove")
         {
             let index = input[1];
-            arr.splice(index, 1); // mahame elementa sus .splice() !
+            arr.splice(index, 1); 
         }
-
     });
 
     arr.forEach( a => {
@@ -25,6 +24,7 @@ function solve(args) {
     })
 
 }
+
 /*
 solve([
     'add 3',
@@ -46,18 +46,3 @@ solve([
     'remove 2',
     'remove 0',
     'add 7']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

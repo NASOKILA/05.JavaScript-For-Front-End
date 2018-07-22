@@ -2,15 +2,11 @@
  * Created by user on 11/11/2017.
  */
 
-
-
 function solve(args)
 {
-
     let obj = {};
     let arrayWithValues = [];
     args.forEach( a => {
-
 
         let keyAndValue = a.split(' ');
 
@@ -19,7 +15,7 @@ function solve(args)
             let key = keyAndValue[0];
             let value = keyAndValue[1];
 
-            if(!(key in obj))  // ako ne sudurjame tozi kluch
+            if(!(key in obj))  
                 arrayWithValues = [];
             else
                 arrayWithValues = obj[key];
@@ -38,11 +34,8 @@ function solve(args)
             {
                 console.log('None')
             }
-
         }
-
     })
-
 }
 solve([
     '3 test',
@@ -51,13 +44,3 @@ solve([
     '4 test3',
     '4 test5',
     '4']);
-
-
-
-
-
-
-
-
-
-

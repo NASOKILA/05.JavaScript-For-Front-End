@@ -2,7 +2,6 @@
  * Created by user on 11/11/2017.
  */
 
-
 function solve(args)
 {
     args.forEach( p => {
@@ -18,11 +17,6 @@ function solve(args)
         obj["age"] = a;
         obj["grade"] = g;
 
-        //let resultInStr = JSON.stringify(obj);
-        //let resultInJson = JSON.parse(resultInStr);
-
-
-        //POLZVAME PLACEHOLDER ZA VIZUALIZACIQ
         console.log(`Name: ${obj.name}`);
         console.log(`Age: ${obj.age}`);
         console.log(`Grade: ${obj.grade}`);
@@ -30,13 +24,8 @@ function solve(args)
     })
 
 }
+
 solve([
     'Pesho -> 13 -> 6.00',
     'Ivan -> 12 -> 5.57',
     'Toni -> 13 -> 4.90']);
-
-
-
-
-
-

@@ -2,14 +2,10 @@
  * Created by user on 11/11/2017.
  */
 
-
-
 function solve(args)
 {
-
     let obj = {};
     args.forEach( a => {
-
 
         let keyAndValue = a.split(' ');
 
@@ -52,23 +48,3 @@ solve([
     '3 bla',
     '3 alb',
     '2']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

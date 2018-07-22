@@ -1,9 +1,7 @@
 /**
  * Created by user on 11/11/2017.
  */
-
-
-
+ 
 function solve(args)
 {
     for(let arg of args.reverse())
@@ -17,13 +15,3 @@ function solve(args)
 //solve(['5','5.5','24','-3']);
 
 solve(['20','1','20','1','20']);
-
-
-
-
-
-
-
-
-
-

@@ -2,8 +2,6 @@
  * Created by user on 10/11/2017.
  */
 
-
-
 function solve(args)
 {
     let lengthOfArray = args[0];
@@ -14,10 +12,8 @@ function solve(args)
     for(let i = 0; i<= Number(lengthOfArray)-1; i++)
         values[i] = 0;
 
-
     for(let i = 1; i <= args.length-1; i++)
     {
-
         let indexAndValue = args[i];
         indexAndValue = indexAndValue.split(' - ');
         let index = Number(indexAndValue[0]);
@@ -51,12 +47,3 @@ solve([
     '0 - 3',
     '3 - -1',
     '4 - 2']);
-
-
-
-
-
-
-
-
-

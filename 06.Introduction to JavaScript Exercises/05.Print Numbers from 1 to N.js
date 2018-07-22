@@ -1,9 +1,7 @@
 /**
  * Created by user on 11/11/2017.
  */
-
-
-
+ 
 function solve(args)
 {
 
@@ -16,11 +14,3 @@ function solve(args)
 //solve(['5']);
 
 solve(['2']);
-
-
-
-
-
-
-
-
