@@ -3,6 +3,4 @@
  */
 
 
-//Ne znam kak da kompiliram osven v brawsera
-
 
